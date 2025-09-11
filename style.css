@@ -1,0 +1,163 @@
+/* 推荐字体（可改）：英文 Lora + 系统中文宋体/思源宋体 */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
+
+:root {
+  --bg: #f0f0f0;
+  --ink: #333;
+  --muted: #666;
+  --accent: #e91e63; /* 情感 */
+  --info: #3498db;   /* 理性 */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Lora', 'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+}
+
+/* 画布容器固定在底层 */
+#canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* 底层 */
+}
+
+/* 内容在上层滚动 */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 跳过链接（无障碍） */
+.skip-link {
+  position: absolute;
+  top: -40px; left: 8px;
+  background: #fff; color: #000; padding: 8px 12px;
+  border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+.skip-link:focus { top: 8px; }
+
+/* 全屏区（首页/尾声） */
+.full-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+#manifesto h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-wrap: balance;
+  margin: 0 0 0.6rem 0;
+}
+#manifesto p { color: #444; font-size: 1.1rem; }
+
+/* 内容区块（毛玻璃+柔和背景，保证可读性） */
+.content-section {
+  max-width: 980px;
+  margin: 0 auto 4rem;
+  padding: 4.5rem 2rem;
+  background: rgba(240,240,240,0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.06);
+}
+.content-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0 0 2rem 0;
+  position: relative;
+}
+.content-section h2::after {
+  content: '';
+  display: block;
+  width: 54px; height: 2px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+}
+
+/* 卡片/画廊 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.11);
+}
+.card img { width: 100%; display: block; }
+.card h3, .card p { padding: 0 1.1rem; }
+.card h3 { margin: 1.1rem 0 .4rem; font-size: 1.1rem; }
+.card p { margin: 0 0 1.2rem; color: var(--muted); font-size: .98rem; }
+
+/* 让整张卡片可点击 */
+a.card { display: block; color: inherit; text-decoration: none; }
+
+/* 详情页里的图文更舒服 */
+.detail-figure { margin: 1rem 0 0; }
+.detail-figure img { width: 100%; border-radius: 12px; display: block; }
+.detail-figure figcaption { color: #777; font-size: 0.9rem; margin-top: 0.4rem; }
+
+/* 返回按钮 */
+.back-link {
+  position: fixed; top: 16px; left: 16px; z-index: 6;
+  padding: 8px 12px; border-radius: 20px; border: 1px solid #ddd;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(6px);
+  color: #333; text-decoration: none; font-size: 12px;
+}
+
+/* 尾声 */
+#epilogue { color: #444; }
+
+/* “私活贴纸” */
+.sticker {
+  position: fixed; z-index: 10;
+  display: inline-block;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.9);
+  border: 1px dashed #bbb;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  transform: rotate(-6deg);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.sticker:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 6px 18px rgba(0,0,0,.1); }
+.sticker-1 { top: 18%; left: 16%; }
+.sticker-2 { bottom: 18%; right: 12%; }
+
+/* 动静切换按钮 */
+#toggle-anim {
+  position: fixed; right: 14px; bottom: 14px; z-index: 5;
+  padding: 8px 12px; border-radius: 20px; border: 1px solid #ddd;
+  background: rgba(255,255,255,0.75); backdrop-filter: blur(6px);
+  font-size: 12px; cursor: pointer;
+}
+
+/* 移动端优化：加大背景透明以保可读性 */
+@media (max-width: 640px) {
+  .content-section { background: rgba(245,245,245,0.92); }
+}
+
+/* 减少动态（系统偏好） */
+@media (prefers-reduced-motion: reduce) {
+  .card, .sticker { transition: none; }
+}

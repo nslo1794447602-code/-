@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的名字｜个人宣言</title>
+  <meta name="description" content="温和、纯粹、感性的视觉诗主页：设计、写作与装置艺术的杂糅。">
+
+  <!-- 分享预览（可换成你的图片和域名） -->
+  <meta property="og:title" content="你的名字｜个人宣言">
+  <meta property="og:description" content="温和、纯粹、感性的视觉诗主页。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Your+Preview+Image">
+
+  <!-- 结构化数据（SEO，可替换你的链接） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "你的名字",
+    "jobTitle": "设计师 / 艺术创作",
+    "url": "https://你的域名",
+    "sameAs": ["https://www.instagram.com/你的id","https://www.behance.net/你的id"]
+  }
+  </script>
+
+  <!-- 样式 -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+</head>
+<body>
+  <!-- 跳到正文（无障碍） -->
+  <a class="skip-link" href="#about">跳到正文</a>
+
+  <!-- 视觉诗画布容器（固定在底层） -->
+  <div id="canvas-container"></div>
+
+  <!-- 动静切换按钮 -->
+  <button id="toggle-anim" aria-label="切换动静">静止</button>
+
+  <!-- “私活贴纸”（示例，可改链接） -->
+  <a class="sticker sticker-1" href="works/poem-rain.html" title="随机的小练习">私活·01</a>
+  <a class="sticker sticker-2" href="works/brand-newborn.html" title="灵感碎片">私活·02</a>
+
+  <main class="content">
+    <!-- 首页宣言（全屏） -->
+    <section id="manifesto" class="full-screen"
+      data-chars="草木朝云花风暖"
+      data-colors="#e91e63,#3498db,#2ecc71,#f1c40f"
+      data-density="52">
+      <h1>六只小海鴎@</h1>
+      <p>我期待着一切简单的事物中找寻新的力量。</p>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="content-section"
+      data-chars="我你在城宁静回响语词"
+      data-colors="#3498db,#2ecc71"
+      data-density="44">
+      <h2>独白</h2>
+      <p>我相信，每一次创作都是为独特的。笔下所向，设计所想，感悟有量。
+      它们互相渗透，像在混凝土里生长的花，柔软却有力。</p>
+    </section>
+
+    <!-- 创作一些 -->
+    <section id="creations" class="content-section"
+      data-chars="诗文叶草雨雾海步"
+      data-colors="#e91e63,#f1c40f"
+      data-density="50">
+      <h2>作品一些</h2>
+      <div class="gallery">
+        <a class="card" href="works/poem-rain.html" aria-label="查看 漆得理安  漆与时尚——戒亦镯系列">
+          <img src="stickers/111.png" alt="漆得理安系列的视觉片段">
+          <h3>漆得理安  漆与时尚——戒亦镯系列</h3>
+          <p>以著名艺术家蒙德里安的作品为灵感，艺术与设计的碰撞中，焕发出新的可能</p>
+        </a>
+        <a class="card" href="works/installation-echo.html" aria-label="查看 积发GEAFA梳子">
+          <img src="stickers/1.227.png"alt="装置《破碎的回响》装置局部">
+          <h3>积发GEAFA梳子</h3>
+          <p>让它变成你想要的模样，久久的留在你身边。</p>
+        </a>
+        <a class="card" href="writings/city-colors.html" aria-label="查看 设计的先疯">
+          <img src="stickers/55555.png" alt="短文《城市的颜色》配图">
+          <h3>设计的先疯</h3>
+          <p>美院的先疯，先疯们最近又遇上什么事情呢？</p>
+        </a>
+        <a class="card" href="works/installation-echo.html" aria-label="查看 燕返_Homecoming swallows">
+          <img src="stickers/6666.jpg" alt="装置2222局部">
+          <h3>燕返_Homecoming swallows</h3>
+          <p>动物友好型设计</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 设计之思 -->
+    <section id="design" class="content-section"
+      data-chars="格网比例留白形字序点线面"
+      data-colors="#3498db,#2ecc71"
+      data-density="46">
+      <h2>平面一些</h2>
+      <div class="gallery">
+        <a class="card" href="works/brand-newborn.html" aria-label="查看 Only leaves">
+          <img src="stickers/777.jpg" alt="品牌视觉识别案例">
+          <h3>Only leaves</h3>
+          <p>源于“INFP”的克制留白，具体诗与个人IP抽象创作。</p>
+        </a>
+        <a class="card" href="works/book-lost.html" aria-label="查看 抽象1件">
+          <img src="stickers/88.png" alt="书籍封面设计案例">
+          <h3>抽象1件</h3>
+          <p>既定的轨迹，平行，交错，碰撞，世潮涌涌，百态种种。</p>
+        </a>
+        <a class="card" href="works/book-lost.html" aria-label="查看 手的联结与爱心工作坊的创作">
+          <img src="stickers/888.png" alt="书籍封面设计案例">
+          <h3>谨以此书献给——卓别林大师</h3>
+          <p>既定的轨迹，平行，交错，碰撞，世潮涌涌，百态种种。</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 尾声 / 联系 -->
+    <section id="epilogue" class="full-screen"
+      data-chars="世界创作继续相遇"
+      data-colors="#e91e63,#3498db"
+      data-density="40">
+      <p>世界很大，创作不止。</p>
+      <p>联系我：1794447602@qq.com</p>
+    </section>
+  </main>
+
+  <!-- 视觉诗脚本 -->
+  <script src="sketch.js"></script>
+</body>
+</html>
